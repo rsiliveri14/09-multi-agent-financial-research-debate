@@ -1,0 +1,11 @@
+suite: regression
+compare_single_agent: true
+metrics:
+  - evidence_supported_accuracy
+  - unsupported_claim_rate
+  - contradiction_detection
+  - final_correctness
+  - specialist_diversity
+  - redundant_tool_use
+  - latency_ms
+  - cost_usd

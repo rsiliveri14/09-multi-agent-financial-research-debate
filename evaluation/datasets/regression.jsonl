@@ -1,0 +1,6 @@
+{"id": "aapl-fy2024-sales", "suite": "regression"}
+{"id": "aapl-q2-preliminary-vs-10q", "suite": "regression"}
+{"id": "msft-fy2024-cloud", "suite": "regression"}
+{"id": "nvda-export-vs-datacenter", "suite": "regression"}
+{"id": "tsla-deliveries-8k-vs-10q", "suite": "regression"}
+{"id": "amzn-aws-fy2024", "suite": "regression"}

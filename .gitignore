@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Env / secrets
+.env
+.env.local
+frontend/.env.local
+*.pem
+*.key
+credentials.json
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Generated
+data/generated/
+
+# IDE
+.idea/
+.vscode/
+.cursor/
+*.swp
+
+# OS
+.DS_Store
+
+# Evaluation reports (keep measured fixtures)
+evaluation/reports/*.md
+evaluation/reports/*.html
+evaluation/reports/load_exceptions.csv
+evaluation/reports/load_failures.csv
+evaluation/reports/load_stats_history.csv
+!evaluation/reports/.gitkeep
+!evaluation/reports/regression.json
+!evaluation/reports/latest.json
+!evaluation/reports/load_stats.csv
+
+# Logs
+*.log
+logs/
+
+# Docker
+postgres-data/
+redis-data/

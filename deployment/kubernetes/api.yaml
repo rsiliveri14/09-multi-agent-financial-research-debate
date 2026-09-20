@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debate-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: debate-api
+  template:
+    metadata:
+      labels:
+        app: debate-api
+    spec:
+      containers:
+        - name: api
+          image: debate-api:local
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: debate-secrets
+          env:
+            - name: STORE_BACKEND
+              value: postgres
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8000
+            initialDelaySeconds: 8
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: "1"
+              memory: 1Gi
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 10001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: debate-api
+spec:
+  selector:
+    app: debate-api
+  ports:
+    - port: 8000
+      targetPort: 8000
